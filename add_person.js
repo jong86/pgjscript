@@ -24,7 +24,7 @@ newPerson.birthdate = process.argv.slice(2)[2];
 function insertPerson(newPerson) {
   knex('famous_people').insert(newPerson).then(function() {
     console.log("Insertion complete.");
-    process.exit();
+    knex.destroy();
   })
 }
 
